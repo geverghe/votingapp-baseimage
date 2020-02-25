@@ -1,0 +1,14 @@
+schemaVersion: '2.0.0'
+
+fileExistenceTests:
+
+- name: 'Package File Exist test'
+  path: '/app'
+  shouldExist: true
+- name: 'Fake Dir'
+  path: '/foo/bar'
+  shouldExist: false
+- name: 'Wrong permissions'
+  path: '/etc/apt/sources.list'
+  permissions: '-rwxrwxrwx'
+  shouldExist: false
