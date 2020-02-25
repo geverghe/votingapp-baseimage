@@ -36,9 +36,7 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)  
+        containerRegistry: $(dockerRegistryServiceConnection)        
     
   - job: Test
     dependsOn: Build
