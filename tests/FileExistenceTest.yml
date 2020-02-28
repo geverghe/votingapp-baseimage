@@ -2,13 +2,24 @@ schemaVersion: '2.0.0'
 
 fileExistenceTests:
 
-- name: 'Package File Exist test'
-  path: '/app'
-  shouldExist: true
 - name: 'Fake Dir'
   path: '/foo/bar'
   shouldExist: false
 - name: 'Wrong permissions'
   path: '/etc/apt/sources.list'
   permissions: '-rwxrwxrwx'
+  shouldExist: false
+- name: 'Root'
+  path: '/'
+  shouldExist: true
+  uid: 0
+  gid: 0
+- name: 'Date'
+  path: '/bin/date'
+  isExecutableBy: 'owner'
+- name: 'Netbase'
+  path: '/etc/protocols'
+  shouldExist: true
+- name: 'Dummy File'
+  path: '/etc/dummy'
   shouldExist: false
