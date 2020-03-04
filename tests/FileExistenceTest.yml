@@ -23,5 +23,3 @@ fileExistenceTests:
 - name: 'Dummy File'
   path: '/etc/dummy'
   shouldExist: false
-- name: 'Machine ID'	
-  path: '/etc/machine-id'
